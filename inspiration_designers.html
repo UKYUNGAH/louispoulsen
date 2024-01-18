@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>louispoulsen</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+          // 모바일 오픈 버튼을 눌렀더니
+          // 모바일 gnb가 나타난다
+          $('.gnb_open_btn').click(function(){
+              $('.gnb').animate({right:0},500)
+          })
+
+          // 모바일 닫기 버튼을 눌렀더니
+          // 모바일 gnb가 사라진다
+          $('.gnb_close_btn').click(function(){
+              $('.gnb').animate({right:'-120%'},500)
+          })
+          
+          // 서브메뉴 보이게 하기!
+          $('.gnb_inner>ul').children('li').mouseenter(function(){
+              $(this).children('.sub_menu').stop().slideDown(500)
+          })
+          $('.gnb_inner>ul>li').mouseleave(function(){
+              $(this).children('.sub_menu').stop().slideUp(500)
+          })
+      })
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <h1 class="header_top_logo">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+      </h1>
+      <div class="gnb_open_btn">
+        <a href="#"><img src="img/gnb_btn.png" alt="모바일메뉴"></a>
+      </div>
+      <div div class="gnb">
+      <div class="gnb_close_btn">
+        <a href="#"><img src="img/ei_close.png" alt="메뉴닫기"></a>
+      </div>
+        <nav class="gnb_inner">
+          <ul>
+            <li>
+              <a href="products_new.html">PRODUCTS</a>
+              <ul class="sub_menu">
+                <li><a href="products_new.html">New product</a></li>
+                <li><a href="products_new.html">Pendant</a></li>
+                <li><a href="products_new.html">Floor lamps</a></li>
+                <li><a href="products_new.html">Table lamps</a></li>
+                <li><a href="products_new.html">Wall sconces</a></li>
+                <li><a href="products_new.html">Outdoor lighting</a></li>
+                <li><a href="products_new.html">Spare parts & Accessories</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="inspiration_designers.html">INSPIRATION</a>
+              <ul class="sub_menu">
+                <li><a href="inspiration_designers.html">Designers</a></li>
+                <li><a href="inspiration_applications.html">Applications</a></li>
+                <li><a href="inspiration_applications.html">Light guides</a></li>
+              </ul>
+            </li>
+            <li><a href="findretailer.html">FIND RETAILER</a></li>
+            <li>
+              <a href="brand_about.html">BRAND</a>
+              <ul class="sub_menu">
+                <li><a href="brand_about.html">About us</a></li>
+                <li><a href="brand_contact.html">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form action="https://www.louispoulsen.com/ko-kr/searchresult" class="util">
+            <div class="util_s">
+                <input type="text" name="query" value="" id="serch">
+                <label for="serch"></label>
+                <button type="submit"></button>
+            </div>
+        </form>
+      </nav>
+    </div>  
+    </header>
+    <section id="designer">
+      <h1>DESIGNERS</h1>
+      <div class="d_bottom">
+        <ul>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Anne Boysen</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Alfred Homann</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Anu Moser</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Arne Jacobsen</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Christian Flindt</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Clara von Zweigbergk</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>GamFratesi</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Jakob Lange - BIG Ideas</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Louise Campbell</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_arne.html">
+              <p>Mads Odgård</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>nendo - Oki Sato</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Olafur Eliasson</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Peter Bysted</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Poul Henningsen</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Shoichi Uchiyama</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Verner Panton</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Vilhelm Lauritzen</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Vilhelm Wohlert</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="inspiration_designers_poul.html">
+              <p>Øivind Slaatto</p>
+              <img src="img/arrow_r.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <footer id="footer">
+      <div class="footer_top">
+        <div class="f_top_left">
+          <h1>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+          </h1>
+          <ul>
+            <li><a href="https://www.facebook.com/Louis.Poulsen.Lighting/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/louispoulsen/">Instagram</a></li>
+            <li><a href="https://www.youtube.com/user/LouisPoulsenLighting">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="f_top_right">
+          <a href="util_login.html"><p>LOGIN</p></a>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <nav class="fnb">
+          <ul>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">정책쿠키</a></li>
+            <li><a href="#">정책문의 양식 - GDPR</a></li>
+            <li><a href="#">연례 보고서</a></li>
+          </ul>
+        </nav>
+        <p>© 2022 Artemide S.p.A. &#45; All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

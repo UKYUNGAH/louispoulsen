@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>louispoulsen</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+          // 모바일 오픈 버튼을 눌렀더니
+          // 모바일 gnb가 나타난다
+          $('.gnb_open_btn').click(function(){
+              $('.gnb').animate({right:0},500)
+          })
+
+          // 모바일 닫기 버튼을 눌렀더니
+          // 모바일 gnb가 사라진다
+          $('.gnb_close_btn').click(function(){
+              $('.gnb').animate({right:'-120%'},500)
+          })
+          
+          // 서브메뉴 보이게 하기!
+          $('.gnb_inner>ul').children('li').mouseenter(function(){
+              $(this).children('.sub_menu').stop().slideDown(500)
+          })
+          $('.gnb_inner>ul>li').mouseleave(function(){
+              $(this).children('.sub_menu').stop().slideUp(500)
+          })
+          
+            // scroll
+            let winScroll = $(window).scrollTop()
+            let arnetTop = $('#arneTop').offset().top-200
+            let arnemTop = $('#arneMid').offset().top-200
+            let arnebTop = $('#arneBottom').offset().top-200
+
+            $(window).resize(function(){
+            arnetTop = $('#arneTop').offset().top-200
+            arnemTop = $('#arneMid').offset().top-200
+            arnebTop = $('#arneBottom').offset().top-200
+            })
+
+            $(window).off().scroll(function(){
+                winScroll = $(window).scrollTop()
+                if(winScroll>arnetTop){
+                    $('#arneTop .d_t_left>img').each(function(index){
+                        $(this).delay(200).animate({left:0,opacity:1},800)
+                    })
+                    $('#arneTop .d_t_right h1').each(function(index){
+                        $(this).delay(400).animate({right:0,opacity:1},800)
+                    })
+                    $('#arneTop .d_a_info').each(function(index){
+                        $(this).delay(600).animate({top:0,opacity:1},800)
+                    })
+                }
+                if(winScroll>arnemTop){
+                    $('#arneMid>img').each(function(index){
+                        $(this).delay(200).animate({top:0,opacity:1},1200)
+                    })
+                    $('#arneMid h2').each(function(index){
+                        $(this).delay(400).animate({top:0,opacity:1},1800)
+                    })
+                    $('#arneMid .d_a_info').each(function(index){
+                        $(this).delay(600).animate({top:0,opacity:1},2000)
+                    })
+                }
+                if(winScroll>arnebTop){
+                    $('#arneBottom>img').each(function(index){
+                        $(this).delay(200).animate({top:0,opacity:1},2200)
+                    })
+                    $('#arneBottom h2').each(function(index){
+                        $(this).delay(400).animate({top:0,opacity:1},2400)
+                    })
+                    $('#arneBottom h3').each(function(index){
+                        $(this).delay(600).animate({top:0,opacity:1},2600)
+                    })
+                    $('#arneBottom .d_a_info').each(function(index){
+                        $(this).delay(800).animate({top:0,opacity:1},2800)
+                    })
+                }
+              })
+         })
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <h1 class="header_top_logo">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+      </h1>
+      <div class="gnb_open_btn">
+        <a href="#"><img src="img/gnb_btn.png" alt="모바일메뉴"></a>
+      </div>
+      <div div class="gnb">
+      <div class="gnb_close_btn">
+        <a href="#"><img src="img/ei_close.png" alt="메뉴닫기"></a>
+      </div>
+        <nav class="gnb_inner">
+          <ul>
+            <li>
+              <a href="products_new.html">PRODUCTS</a>
+              <ul class="sub_menu">
+                <li><a href="products_new.html">New product</a></li>
+                <li><a href="products_new.html">Pendant</a></li>
+                <li><a href="products_new.html">Floor lamps</a></li>
+                <li><a href="products_new.html">Table lamps</a></li>
+                <li><a href="products_new.html">Wall sconces</a></li>
+                <li><a href="products_new.html">Outdoor lighting</a></li>
+                <li><a href="products_new.html">Spare parts & Accessories</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="inspiration_designers.html">INSPIRATION</a>
+              <ul class="sub_menu">
+                <li><a href="inspiration_designers.html">Designers</a></li>
+                <li><a href="inspiration_applications.html">Applications</a></li>
+                <li><a href="inspiration_applications.html">Light guides</a></li>
+              </ul>
+            </li>
+            <li><a href="findretailer.html">FIND RETAILER</a></li>
+            <li>
+              <a href="brand_about.html">BRAND</a>
+              <ul class="sub_menu">
+                <li><a href="brand_about.html">About us</a></li>
+                <li><a href="brand_contact.html">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form action="https://www.louispoulsen.com/ko-kr/searchresult" class="util">
+            <div class="util_s">
+                <input type="text" name="query" value="" id="serch">
+                <label for="serch"></label>
+                <button type="submit"></button>
+            </div>
+        </form>
+      </nav>
+    </div>  
+  </header>
+
+    <section id="arneTop">
+        <div class="d_t_left">
+          <img src="img/designer/arne1.jpg" alt="아르네 야콥센이 쳐다보는 사진">
+        </div>
+        <div class="d_t_right">
+          <h1>Designer,<br>Arne<br>Jacobsen</h1>
+          <p class="d_a_info">Arne Jacobsen은 코펜하겐에서 태어나고 자랐습니다. 1927년 코펜하겐의 덴마크 왕립 미술 아카데미에서 건축을 전공했습니다. 졸업 후, 코펜하겐의 City Architect에서 첫 직장을 시작했으나, 단 2년 만에 독립하여 자신의 사무실로 개업했습니다. Arne Jacobsen은 세계적으로 유명한 덴마크의 모더니즘 건축가입니다. 그가 디자인한 건물이 덴마크, 독일 그리고 영국에 다수 있습니다.</p>
+        </div>
+    </section>
+
+    <section id="arneMid">
+        <img src="img/designer/arne2.jpg" alt="아르네 야콥센이 만든 조명을 책상에 놓은 사진">
+        <h2>Arne Jacobsen about</h2>
+        <p class="d_a_info a_info1">유명한 프로젝트로는 코펜하겐 National Bank(1971), 코펜하겐 SAS Royal Hotel & Terminal(1960) 및 영국 옥스포드의 St. Catherine’s College(1963) 등이 있습니다. 비행에 대한 두려움 때문에 미국 건축계에 큰 영향을 미치지 못했다고 전해집니다.</p>
+        <p class="d_a_info a_info2">건축가로서 Arne Jacobsen은 확고한 소신을 가지고 있었기 때문에 건물 자체의 설계뿐 아니라 디테일에도 큰 영향을 미칠 수 있었습니다. 수년에 걸쳐 그는 조명 기구, 가구, 식기 세트, 도어 핸들, 위생 기구, 직물 및 벽지 패턴과 같은 그의 작품과 관련된 다양한 분야에 진출했습니다. "The Egg"와 "The Swan"은 Jacobsen이 설계한 유명한 두 가지 의자입니다.</p>
+    </section>
+
+    <section id="arneBottom">
+    <img src="img/designer/arne3.jpg" alt="아르네 야콥센이 만든것을 계단에 전시해놓은 사진">
+    <h2>LIGHT</h2>
+    <h3>win an prestigious award</h3>
+    <p class="d_a_info">Arne Jacobsen은 평생 동안 국내외의 여러 권위 있는 상을 수상했습니다. 그는 11년 동안 덴마크 왕립 아카데미에서 교수로 재직했으며, 이 기간 동안 덴마크 건축의 전 세대에 영향을 미쳤습니다. 이들은 건축에 대한 공통의 합리주의 및 미니멀리즘 접근 방식을 바탕으로 결국 덴마크 특유의 건축 스타일을 개발했습니다.</p>
+    </section>
+
+
+    <footer id="footer">
+      <div class="footer_top">
+        <div class="f_top_left">
+          <h1>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+          </h1>
+          <ul>
+            <li><a href="https://www.facebook.com/Louis.Poulsen.Lighting/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/louispoulsen/">Instagram</a></li>
+            <li><a href="https://www.youtube.com/user/LouisPoulsenLighting">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="f_top_right">
+          <a href="util_login.html"><p>LOGIN</p></a>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <nav class="fnb">
+          <ul>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">정책쿠키</a></li>
+            <li><a href="#">정책문의 양식 - GDPR</a></li>
+            <li><a href="#">연례 보고서</a></li>
+          </ul>
+        </nav>
+        <p>© 2022 Artemide S.p.A. &#45; All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

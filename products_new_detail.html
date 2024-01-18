@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>louispoulsen</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+          // 모바일 오픈 버튼을 눌렀더니
+          // 모바일 gnb가 나타난다
+          $('.gnb_open_btn').click(function(){
+              $('.gnb').animate({right:0},500)
+          })
+
+          // 모바일 닫기 버튼을 눌렀더니
+          // 모바일 gnb가 사라진다
+          $('.gnb_close_btn').click(function(){
+              $('.gnb').animate({right:'-120%'},500)
+          })
+          
+          // 서브메뉴 보이게 하기!
+          $('.gnb_inner>ul').children('li').mouseenter(function(){
+              $(this).children('.sub_menu').stop().slideDown(500)
+          })
+          $('.gnb_inner>ul>li').mouseleave(function(){
+              $(this).children('.sub_menu').stop().slideUp(500)
+          })
+            
+            //select color
+            $('.detail_text>div>ul>li').each(function(index){
+              
+              $(this).click(function(){
+                $('.detail_img>ul').eq(index).addClass('ph_select').siblings().removeClass('ph_select')
+                let selectColor = $(this).attr('data-color')
+                $('.detail_text>div>span').html(selectColor)
+                // slider(index)
+                clickNum=0
+              })
+            })
+            
+            //img silder
+            function slider(index){
+                $('.ph_select>li').eq(index).stop().fadeIn(500).siblings().stop().fadeOut(500)
+            }
+
+            // let clickNum = 0
+            $('.detail_img>ul>li').each(function(index){
+                slider(index)
+                clickNum=index
+            })
+
+            $('.detail_next').click(function(){
+                clickNum++
+                if(clickNum>1){
+                    clickNum=0
+                }
+                slider(clickNum)
+            })
+            $('.detail_prev').click(function(){
+                clickNum--
+                if(clickNum<0){
+                    clickNum=1
+                }
+                slider(clickNum)
+            })
+
+            $('.detail_shopbag').click(function(){
+                alert('장바구니에 추가 되었습니다.')
+            })
+
+            // 아코디언
+
+            $('.accordion_list>li').click(function(){
+                $(this).addClass('accordion_select').siblings().removeClass('accordion_select')
+                $(this).find('div').slideDown(300)
+                $(this).siblings().find('div').slideUp(300)
+            })
+      })
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <h1 class="header_top_logo">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+      </h1>
+      <div class="gnb_open_btn">
+        <a href="#"><img src="img/gnb_btn.png" alt="모바일메뉴"></a>
+      </div>
+      <div div class="gnb">
+      <div class="gnb_close_btn">
+        <a href="#"><img src="img/ei_close.png" alt="메뉴닫기"></a>
+      </div>
+        <nav class="gnb_inner">
+          <ul>
+            <li>
+              <a href="products_new.html">PRODUCTS</a>
+              <ul class="sub_menu">
+                <li><a href="products_new.html">New product</a></li>
+                <li><a href="products_new.html">Pendant</a></li>
+                <li><a href="products_new.html">Floor lamps</a></li>
+                <li><a href="products_new.html">Table lamps</a></li>
+                <li><a href="products_new.html">Wall sconces</a></li>
+                <li><a href="products_new.html">Outdoor lighting</a></li>
+                <li><a href="products_new.html">Spare parts & Accessories</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="inspiration_designers.html">INSPIRATION</a>
+              <ul class="sub_menu">
+                <li><a href="inspiration_designers.html">Designers</a></li>
+                <li><a href="inspiration_applications.html">Applications</a></li>
+                <li><a href="inspiration_applications.html">Light guides</a></li>
+              </ul>
+            </li>
+            <li><a href="findretailer.html">FIND RETAILER</a></li>
+            <li>
+              <a href="brand_about.html">BRAND</a>
+              <ul class="sub_menu">
+                <li><a href="brand_about.html">About us</a></li>
+                <li><a href="brand_contact.html">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form action="https://www.louispoulsen.com/ko-kr/searchresult" class="util">
+            <div class="util_s">
+                <input type="text" name="query" value="" id="serch">
+                <label for="serch"></label>
+                <button type="submit"></button>
+            </div>
+        </form>
+      </nav>
+    </div>  
+    </header>
+
+    <section id="detail">
+      <div class="detail_inner">
+          <div class="detail_img">
+              <ul class="ph_failrose_list ph_select">
+                  <li><img src="img/detail/f_1.png" alt=""></li>
+                  <li><img src="img/detail/f_2.png" alt=""></li>
+                </ul>
+              <ul class="ph_rose_list">
+                  <li><img src="img/detail/r_1.png" alt=""></li>
+                  <li><img src="img/detail/r_2.png" alt=""></li>
+              </ul>
+              <ul class="ph_orange_list">
+                <li><img src="img/detail/o_1.png" alt=""></li>
+                <li><img src="img/detail/o_2.png" alt=""></li>
+              </ul>
+              <ul class="ph_blue_list">
+                <li><img src="img/detail/b_1.png" alt=""></li>
+                <li><img src="img/detail/b_2.png" alt=""></li>
+              </ul>
+              <ul class="ph_whiteclassic_list">
+                <li><img src="img/detail/w_1.png" alt=""></li>
+                <li><img src="img/detail/w_2.png" alt=""></li>
+              </ul>
+              <ul class="ph_mustard_list">
+                <li><img src="img/detail/m_1.png" alt=""></li>
+                <li><img src="img/detail/m_2.png" alt=""></li>
+              </ul>
+              <ul class="ph_oystergray_list">
+                <li><img src="img/detail/y_1.png" alt=""></li>
+                <li><img src="img/detail/y_2.png" alt=""></li>
+              </ul>
+              <ul class="ph_rosepeach_list">
+                <li><img src="img/detail/p_1.png" alt=""></li>
+                <li><img src="img/detail/p_2.png" alt=""></li>
+              </ul>
+              <ul class="ph_bluerose_list">
+                <li><img src="img/detail/u_1.png" alt=""></li>
+                <li><img src="img/detail/u_2.png" alt=""></li>
+              </ul>
+              <div class="detail_btn">
+                <img src="img/prev.png" alt="이전" class="detail_prev">
+                <img src="img/next.png" alt="다음" class="detail_next">
+              </div>
+          </div>
+          <div class="detail_text">
+              <h2>PH 5</h2>
+              <p>
+                Design by<br>Poul Henningsen
+              </p>
+              <div class="selceted"> 선택된 색상 <span>모노크롬 페일 로즈</span>
+                  <ul>
+                      <li class="ph_failrose" data-color="모노크롬 페일 로즈"></li>
+                      <li class="ph_rose" data-color="로즈"></li>
+                      <li class="ph_orange" data-color="오렌지"></li>
+                      <li class="ph_blue" data-color="블루"></li>
+                      <li class="ph_whiteclassic" data-color="화이트 클래식"></li>
+                      <li class="ph_mustard" data-color="머스타드"></li>
+                      <li class="ph_oystergray" data-color="모노크롬 오이스터 그레이"></li>
+                      <li class="ph_rosepeach" data-color="파스텔 블루 로즈 피치"></li>
+                      <li class="ph_bluerose" data-color="파스텔 오이스터 그레이 블루 로즈"></li>
+                  </ul>
+              </div>
+              <div class="detail_shopbag btn1">장바구니 담기</div>
+              <div></div>
+          </div>
+      </div>
+    </section>
+
+    <section id="detail_mid">
+      <div class="mid_top">
+        <img src="img/de1.png" alt="">
+        <img src="img/de2.png" alt="" class="mid_img2">
+      </div>
+      <div class="mid_bottom">
+        <div class="b_1">
+          <h3>환경 제품 정보</h3>
+          <p>본 제품은 유럽 지침, RoHS 지침 2011/65 및 2015/863에 포함된 요구 사항을 준수합니다. 본 제품은 제품의 100%를 분해 및 재사용할 수 있도록 설계되었습니다. 루이스폴센은 유럽 전역의 전자 폐기물(WEEE)의 재사용을 보장하는 ELRETUR의 일원입니다. 본 제품은 전자 폐기물로 처리해야 합니다. 제품은 패브릭 가방과 판지 상자로 포장되어 있습니다. 판지는 최소 75%의 재활용 섬유질로 만들어집니다. 기타 판지 재료는 FSC 승인을 거친 원료를 사용합니다.</p>
+        </div>
+        <div class="b_2">
+          <h3>기타 정보</h3>
+          <p>재질: 모노크롬 페일 로즈, 무광 래커 알루미늄. 눈부심 방지 전등갓: 페일 로즈. 버팀목: 페일 로즈, 압연 알루미늄. 디퓨저: 반투명 유리. 캐노피: 예. 코드 길이: 3m. 코드 유형: 화이트 패브릭.</p>
+        </div>
+        <div class="b_3">
+          <h3>사이즈 및 무게 정보</h3>
+          <p>너비 x 높이 x 길이 (mm)<br>
+            500 x 267 x 500, 2.1 kg</p>
+        </div>
+        <div class="b_4">
+          <h3>광원</h3>
+          <p>광원 1x75W E27</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="accordion">
+      <ul class="accordion_list">
+          <li>
+              <h3>예비 부품 & 액세서리</h3>
+              <div class="accordion_inner">
+                <p>당사는 Louis Poulsen® 순정 예비 부품 및 액세서리를 공급합니다.</p>
+                  <ul class="accordion_list_f">
+                      <li>
+                          <a href="#"><img src="img/detail/ac1.png" alt="">
+                          <h3>캐노피 화이트 2-파트</h3>
+                          <p>제품 번호</p>
+                          <p>5749329034</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#"><img src="img/detail/ac2.png" alt="">
+                          <h3>캐노피 블랙 2-파트</h3>
+                          <p>제품 번호</p>
+                          <p>5749329021</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#"><img src="img/detail/ac3.png" alt="">
+                          <h3>PH 5, 전기 어셈블리, 화이트</h3>
+                          <p>제품 번호</p>
+                          <p>5741086498</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#"><img src="img/detail/ac4.png" alt="">
+                          <h3>PH5 PLUS/PH50 유리 디스크</h3>
+                          <p>제품 번호</p>
+                          <p>5741093300</p>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </li>
+          <li>
+              <h3>비하인드 스토리</h3>
+              <div class="accordion_inner">
+                <p class="accordion_title">비하인드 스토리</p>
+                  <p class="accordion_info">
+                    Poul Henningsen은 전구 제조업체에서 백열 전구의 모양과 크기를 계속 바꾸는 것에 대응하기 위해 1958년 PH 5를 개발했으며, 지름이 50cm인 펜던트의 메인 전등갓 크기에서 이름을 따왔습니다. 이 램프를 처음 선보이면서 그는 더 이상 백열 전구 제조업체들이 상식을 따르거나 소비자의 이익을 최우선으로 여길 것이라고 믿지 않는다는 요지의 대담한 글을 썼습니다. “나는 나의 운명을 받아들였으며, 루이스폴센의 허락을 얻어 모든 종류의 광원, 크리스마스 조명 및 100W의 메탈 필라멘트 전구를 사용할 수 있는 PH 조명 기구를 만들었습니다. 비록 형광등으로는 어려운 작업일 수도 있지만 말이죠!” Henningsen은 PH 5의 광원 색상 재현 특성을 개선하고자 했습니다. 따라서 스펙트럼 중에서 눈이 가장 덜 민감한 부분인 빨강과 파랑 부분을 보완하기 위해 작은 레드 및 블루 전등갓을 삽입하여, 눈이 가장 민감한 부분인 가운데 황록색의 빛을 완화시켰습니다. 당시에는 PH 5가 라이트를 어떻게 설치하건 또는 어떤 광원을 사용하건 눈부심이 전혀 없는 PH 라이트의 동의어가 될 것임을 어느 누구도 알지 못했습니다. 하지만 오늘날의 광원은 Henningsen 시대의 광원보다 일광을 훨씬 뛰어나게 재현하기 때문에 더 이상 탁월한 광 품질을 얻기 위해 레드 링과 블루 링을 사용할 필요가 없습니다. 그럼에도 불구하고 PH 5는 오늘날 다양한 컬러의 가장 현대적인 인테리어에서도 계속해서 활용되고 있습니다. 2020년에는 블랙, 화이트, 울트라 블루의 모노크롬 버전으로 활용 범위가 더 넓어졌습니다. 2022년, PH 5 파스텔 시리즈는 모노크롬 파스텔 컬러인 오이스터 그레이와 페일 로즈 그리고 현대적인 인테리어 트렌드를 반영하는 두 가지 파스텔 조합을 선보입니다. 하나는 오이스터 그레이, 블루, 페일 로즈의 조합이고 다른 하나는 블루, 페일 로즈, 피치의 조합입니다.
+                  </p>
+              </div>
+          </li>
+          <li>
+              <h3>제품정보</h3>
+              <div class="accordion_inner">
+                  <p class="accordion_info2">
+                    이 조명 기구는 빛의 대부분이 아래쪽으로 향하는 Poul Henningsen의 반사형 3중갓 시스템의 원리에 기반하여 편안하고 눈부심 없는 빛을 제공합니다. 측광은 물론이고 자체 발광하므로 코어 내부에서 부드러운 조명을 발산합니다. 또한 낮은 전등갓에는 반투명 디퓨저 글래스가 장착되어 있어 눈부심이 전혀 없는 하향광을 조사합니다.
+
+                  </p>
+              </div>
+          </li>
+      </ul>
+    </section>
+
+    <footer id="footer">
+      <div class="footer_top">
+        <div class="f_top_left">
+          <h1>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+          </h1>
+          <ul>
+            <li><a href="https://www.facebook.com/Louis.Poulsen.Lighting/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/louispoulsen/">Instagram</a></li>
+            <li><a href="https://www.youtube.com/user/LouisPoulsenLighting">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="f_top_right">
+          <a href="util_login.html"><p>LOGIN</p></a>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <nav class="fnb">
+          <ul>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">정책쿠키</a></li>
+            <li><a href="#">정책문의 양식 - GDPR</a></li>
+            <li><a href="#">연례 보고서</a></li>
+          </ul>
+        </nav>
+        <p>© 2022 Artemide S.p.A. &#45; All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

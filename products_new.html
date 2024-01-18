@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>louispoulsen</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+          // 모바일 오픈 버튼을 눌렀더니
+          // 모바일 gnb가 나타난다
+          $('.gnb_open_btn').click(function(){
+              $('.gnb').animate({right:0},500)
+          })
+
+          // 모바일 닫기 버튼을 눌렀더니
+          // 모바일 gnb가 사라진다
+          $('.gnb_close_btn').click(function(){
+              $('.gnb').animate({right:'-120%'},500)
+          })
+          
+          // 서브메뉴 보이게 하기!
+          $('.gnb_inner>ul').children('li').mouseenter(function(){
+              $(this).children('.sub_menu').stop().slideDown(500)
+          })
+          $('.gnb_inner>ul>li').mouseleave(function(){
+              $(this).children('.sub_menu').stop().slideUp(500)
+          })
+
+
+            // imgchange
+            $('#newProduct>ul>li').each(function(index){
+            $(this).mouseenter(function(){
+                $(this).find('.p_list_img').attr('src','img/new/'+index+'_'+index+'.png')
+            })
+            $(this).mouseleave(function(){
+                $(this).find('.p_list_img').attr('src','img/new/'+index+'.png')
+            })
+            })
+
+            
+            // scroll
+            let winScroll = $(window).scrollTop()
+            let newTop = $('#newProduct').offset().top-200
+
+            $(window).resize(function(){
+              newTop = $('#newProduct').offset().top-200
+            })
+
+            $(window).off().scroll(function(){
+                winScroll = $(window).scrollTop()
+                if(winScroll>newTop){
+                    $('#newProduct>ul>li').each(function(index){
+                        $(this).delay(index*200).animate({top:0,opacity:1},500)
+                    })
+                }
+              })
+            
+      })
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <h1 class="header_top_logo">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+      </h1>
+      <div class="gnb_open_btn">
+        <a href="#"><img src="img/gnb_btn.png" alt="모바일메뉴"></a>
+      </div>
+      <div div class="gnb">
+      <div class="gnb_close_btn">
+        <a href="#"><img src="img/ei_close.png" alt="메뉴닫기"></a>
+      </div>
+        <nav class="gnb_inner">
+          <ul>
+            <li>
+              <a href="products_new.html">PRODUCTS</a>
+              <ul class="sub_menu">
+                <li><a href="products_new.html">New product</a></li>
+                <li><a href="products_new.html">Pendant</a></li>
+                <li><a href="products_new.html">Floor lamps</a></li>
+                <li><a href="products_new.html">Table lamps</a></li>
+                <li><a href="products_new.html">Wall sconces</a></li>
+                <li><a href="products_new.html">Outdoor lighting</a></li>
+                <li><a href="products_new.html">Spare parts & Accessories</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="inspiration_designers.html">INSPIRATION</a>
+              <ul class="sub_menu">
+                <li><a href="inspiration_designers.html">Designers</a></li>
+                <li><a href="inspiration_applications.html">Applications</a></li>
+                <li><a href="inspiration_applications.html">Light guides</a></li>
+              </ul>
+            </li>
+            <li><a href="findretailer.html">FIND RETAILER</a></li>
+            <li>
+              <a href="brand_about.html">BRAND</a>
+              <ul class="sub_menu">
+                <li><a href="brand_about.html">About us</a></li>
+                <li><a href="brand_contact.html">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form action="https://www.louispoulsen.com/ko-kr/searchresult" class="util">
+            <div class="util_s">
+                <input type="text" name="query" value="" id="serch">
+                <label for="serch"></label>
+                <button type="submit"></button>
+            </div>
+        </form>
+      </nav>
+    </div>  
+    </header>
+
+    <section id="productBanner">
+      <img src="img/111.jpg" alt="">
+    </section>
+
+    <section id="productNav">
+      <h2 class="p_t_title">NEW PRODUCT</h1>
+      <div class="c_inner">
+        <span>신제품</span>
+        <select class="c_nav">
+          <option value="신제품">New product</option>
+          <option value="신제품">Pendant</option>
+          <option value="신제품">Floor lamps</option>
+          <option value="신제품">Table lamps</option>
+          <option value="신제품">Wall sconces</option>
+          <option value="신제품">Outdoor lighting</option>
+          <option value="신제품">Spare parts & Accessories</option>
+      </select>
+      </div>
+    </section>
+
+    <section id="newProduct">
+          <ul>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/0.png" alt="" class="p_list_img">
+                <p class="p_name">PH 5 펜던트</p>
+                <p class="p_info">Pendants</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/1.png" alt="" class="p_list_img">
+                <p class="p_name">PH 2/1 Pale Rose 황동 테이블</p>
+                <p class="p_info">Table lamps</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/2.png" alt="" class="p_list_img">
+                <p class="p_name">PH 3½-3 Pale Rose 황동 펜던트</p>
+                <p class="p_info">Pendants</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/3.png" alt="" class="p_list_img">
+                <p class="p_name">판텔라 포터블 V2</p>
+                <p class="p_info">Table lamps</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/4.png" alt="" class="p_list_img">
+                <p class="p_name">판텔라 미니</p>
+                <p class="p_info">Table lamps</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/5.png" alt="" class="p_list_img">
+                <p class="p_name">Moonsetter</p>
+                <p class="p_info">Floor lamps</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/6.png" alt="" class="p_list_img">
+                <p class="p_name">VL Studio Table/Floor</p>
+                <p class="p_info">Table lamps</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/7.png" alt="" class="p_list_img">
+                <p class="p_name">VL Studio Wall</p>
+                <p class="p_info">Wall sconces</p>
+              </a>
+            </li>
+            <li>
+              <a href="products_new_detail.html">
+                <img src="img/new/8.png" alt="" class="p_list_img">
+                <p class="p_name">NJP Mini</p>
+                <p class="p_info">Table lamps</p>
+              </a>
+            </li>
+        </ul>
+    </section>
+
+    <footer id="footer">
+      <div class="footer_top">
+        <div class="f_top_left">
+          <h1>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+          </h1>
+          <ul>
+            <li><a href="https://www.facebook.com/Louis.Poulsen.Lighting/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/louispoulsen/">Instagram</a></li>
+            <li><a href="https://www.youtube.com/user/LouisPoulsenLighting">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="f_top_right">
+          <a href="util_login.html"><p>LOGIN</p></a>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <nav class="fnb">
+          <ul>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">정책쿠키</a></li>
+            <li><a href="#">정책문의 양식 - GDPR</a></li>
+            <li><a href="#">연례 보고서</a></li>
+          </ul>
+        </nav>
+        <p>© 2022 Artemide S.p.A. &#45; All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

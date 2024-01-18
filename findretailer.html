@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>louispoulsen</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+          // 모바일 오픈 버튼을 눌렀더니
+          // 모바일 gnb가 나타난다
+          $('.gnb_open_btn').click(function(){
+              $('.gnb').animate({right:0},500)
+          })
+
+          // 모바일 닫기 버튼을 눌렀더니
+          // 모바일 gnb가 사라진다
+          $('.gnb_close_btn').click(function(){
+              $('.gnb').animate({right:'-120%'},500)
+          })
+          
+          // 서브메뉴 보이게 하기!
+          $('.gnb_inner>ul').children('li').mouseenter(function(){
+                $(this).children('.sub_menu').stop().slideDown(500)
+            })
+            $('.gnb_inner>ul>li').mouseleave(function(){
+                $(this).children('.sub_menu').stop().slideUp(500)
+            })
+
+
+            // scroll
+            let winScroll = $(window).scrollTop()
+            let re1Top = $('#re1').offset().top-200
+            let re2Top = $('#re2').offset().top-200
+            let re3Top = $('#re3').offset().top-200
+            let re4Top = $('#re4').offset().top-200
+            let re5Top = $('#re5').offset().top-200
+
+            $(window).resize(function(){
+            re1Top = $('#re1').offset().top-200
+            re2Top = $('#re2').offset().top-200
+            re3Top = $('#re3').offset().top-200
+            re4Top = $('#re4').offset().top-200
+            re5Top = $('#re5').offset().top-200
+            })
+
+            $(window).off().scroll(function(){
+                winScroll = $(window).scrollTop()
+                if(winScroll>re1Top){
+                    $('#re1 .re_title1').each(function(index){
+                        $(this).delay(300).animate({top:0,opacity:1},800)
+                    })
+                    $('#re1 .re_title2').each(function(index){
+                        $(this).delay(600).animate({top:0,opacity:1},1000)
+                    })
+                    $('#re1 .re_info1').each(function(index){
+                        $(this).delay(900).animate({top:0,opacity:1},1200)
+                    })
+                    $('#re1 .re_img1').each(function(index){
+                        $(this).delay(1200).animate({top:0,opacity:1},1400)
+                    })
+                    $('#re1 div').each(function(index){
+                        $(this).delay(0).css('height','150')
+                    })
+                }
+                if(winScroll>re2Top){
+                    $('#re2 .re_sub_title1').each(function(index){
+                        $(this).delay(400).animate({top:0,opacity:1},1600)
+                    })
+                    $('#re2 .re_info2').each(function(index){
+                        $(this).delay(700).animate({top:0,opacity:1},1800)
+                    })
+                    $('#re2 .re_info3').each(function(index){
+                        $(this).delay(1200).animate({top:0,opacity:1},2000)
+                    })
+                }
+                if(winScroll>re3Top){
+                    $('#re3 .re_img2').each(function(index){
+                        $(this).delay(400).animate({top:0,opacity:1},2200)
+                    })
+                    $('#re3 .re_sub_title2').each(function(index){
+                        $(this).delay(600).animate({top:0,opacity:1},2400)
+                    })
+                    $('#re3 .re_info2').each(function(index){
+                        $(this).delay(800).animate({top:0,opacity:1},2600)
+                    })
+                }
+                if(winScroll>re4Top){
+                    $('#re4 .re_title1').each(function(index){
+                        $(this).delay(300).animate({top:0,opacity:1},2800)
+                    })
+                    $('#re4 .re_title2').each(function(index){
+                        $(this).delay(600).animate({top:0,opacity:1},3000)
+                    })
+                    $('#re4 .re_img3').each(function(index){
+                        $(this).delay(900).animate({top:0,opacity:1},3200)
+                    })
+                    $('#re4 .re_img4').each(function(index){
+                        $(this).delay(1200).animate({top:0,opacity:1},3400)
+                    })
+                    $('#re4 .re_info2').each(function(index){
+                        $(this).delay(1500).animate({top:0,opacity:1},3600)
+                    })
+                    $('#re4 .line2').each(function(index){
+                        $(this).delay(0).css('height','160')
+                    })
+                }
+                if(winScroll>re5Top){
+                    $('#re5 iframe').each(function(index){
+                        $(this).delay(400).animate({top:0,opacity:1},3800)
+                    })
+                    $('#re5 .re_seongsu').each(function(index){
+                        $(this).delay(800).animate({top:0,opacity:1},4000)
+                    })
+                    $('#re5 .re_seongsu_p').each(function(index){
+                        $(this).delay(1200).animate({top:0,opacity:1},4100)
+                    })
+                }
+              })
+      })
+    </script>
+  </head>
+  <body>
+    <header id="header">
+      <h1 class="header_top_logo">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+      </h1>
+      <div class="gnb_open_btn">
+        <a href="#"><img src="img/gnb_btn.png" alt="모바일메뉴"></a>
+      </div>
+      <div div class="gnb">
+      <div class="gnb_close_btn">
+        <a href="#"><img src="img/ei_close.png" alt="메뉴닫기"></a>
+      </div>
+        <nav class="gnb_inner">
+          <ul>
+            <li>
+              <a href="products_new.html">PRODUCTS</a>
+              <ul class="sub_menu">
+                <li><a href="products_new.html">New product</a></li>
+                <li><a href="products_new.html">Pendant</a></li>
+                <li><a href="products_new.html">Floor lamps</a></li>
+                <li><a href="products_new.html">Table lamps</a></li>
+                <li><a href="products_new.html">Wall sconces</a></li>
+                <li><a href="products_new.html">Outdoor lighting</a></li>
+                <li><a href="products_new.html">Spare parts & Accessories</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="inspiration_designers.html">INSPIRATION</a>
+              <ul class="sub_menu">
+                <li><a href="inspiration_designers.html">Designers</a></li>
+                <li><a href="inspiration_applications.html">Applications</a></li>
+                <li><a href="inspiration_applications.html">Light guides</a></li>
+              </ul>
+            </li>
+            <li><a href="findretailer.html">FIND RETAILER</a></li>
+            <li>
+              <a href="brand_about.html">BRAND</a>
+              <ul class="sub_menu">
+                <li><a href="brand_about.html">About us</a></li>
+                <li><a href="brand_contact.html">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form action="https://www.louispoulsen.com/ko-kr/searchresult" class="util">
+            <div class="util_s">
+                <input type="text" name="query" value="" id="serch">
+                <label for="serch"></label>
+                <button type="submit"></button>
+            </div>
+        </form>
+      </nav>
+    </div>  
+    </header>
+
+    <section id="re1">
+      <div class="line1"></div>
+        <p class="re_title1">서울 성수동에 문을 여는 루이스폴센 단독 매장</p>
+        <h2 class="re_title2">Louis Poulsen Mono Brand Store</h2>
+        <p class="re_info re_info1">덴마크 조명 브랜드 루이스폴센이 대한민국에서의 브랜드 존재감을 높이고자 서울에 단독 매장을 오픈했습니다. 성수동의 예술 거리에 자리 잡은 400㎡ 크기의 빌딩은 현재 아시아에서 가장 복합적인 루이스폴센 리테일 공간입니다.</p>
+        <img src="img/retailer/1.jpg" alt="매장 외관" class="re_img re_img1">
+    </section>
+
+    <section id="re2">
+      <h3 class="re_sub_title re_sub_title1">아시아 매니징 디렉터인<br> 크리스티안 시퍼트는 말했습니다.</h3>
+      <p class="re_info re_info2">“성수동은 20세기 후반 소규모 신발 공장이 모여 번창하던 서울의 한 지역이었습니다. 오늘날 성수동은 현대 예술 갤러리와 디자인 및 라이프스타일 매장, 트렌디한 카페, 다양한 문화가 뒤섞인 레스토랑으로 가득한 핫플레이스입니다. 역사가 담긴 이 지역을 처음 방문했을 때, 아름다운 도시 서울에 루이스폴센 단독 매장을 열기에 완벽한 장소라는 걸 알 수 있었습니다."</p>
+      
+      <p class="re_info re_info3">“루이스폴센의 제품은 브랜드의 긴 역사와 장인정신, 헤리티지에 깊은 뿌리를 두고 있습니다. 이는 깊은 역사와 함께 영감을 주는 디자인 공간으로 자라나고 있는 성수동 일대와 어우러지며 시너지 효과를 만들어내죠.”</p>
+
+    </section>
+
+    <section id="re3">
+        <img src="img/retailer/2.jpg" alt="매장 내부 모습" class="re_img re_img2">
+        <h3 class="re_sub_title re_sub_title2">특별한 조명 경험을 선사합니다. </h3>
+        <p class="re_info re_info2">성수동 매장은 B2B(기업 간) 및 B2C(기업과 소비자 간) 판매와 서비스, 워크숍을 제공할 예정입니다. 또한, 내부와 건물을 둘러싼 외부 공간은 낮이나 밤이나 고객, 디자이너, 건축가, 건축업자들이 이곳에서 루이스폴센의 전체 컬렉션을 둘러볼 수 있습니다.</p>
+    </section>
+
+    <section id="re4">
+      <div class="line2"></div>
+        <p class="re_title1">올라퍼 엘리아슨의</p>
+        <h3 class="re_title2">OE Quasi Light의 전시</h3>
+        <div class="re_4_img">
+            <img src="img/retailer/3.jpg" alt="올라퍼 엘리아슨 내부 전시 모습" class="re_img re_img3">
+            <img src="img/retailer/4.jpg" alt="매장 내부 모습" class="re_img re_img4">
+        </div>
+        <p class="re_info re_info2">유리 모듈은 낮에는 전시장에 자연광이 들어가고 밤에는 이 빛을 체험할 수 있도록 설계되었습니다. QE Quasi 설치물 아래에는 예전에 건물에 물을 공급했던 오래된 물탱크가 놓여 있으며 이는 빌딩 역사의 한 조각으로써 보존되어 왔습니다.</p>
+    </section>
+
+    <section id="re5">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202687.90495156465!2d126.58145219922731!3d37.46075698363231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca530b3350157%3A0xeb0f3b29c1d52128!2sLouisPoulsen%20Store%20SEONGSU!5e0!3m2!1sko!2skr!4v1660458131167!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="re_seongsu">STORE SEONGSU +</p>
+      <p class="re_seongsu_p">
+            <em>STORE<br></em>
+            서울 성동구 성수이로7가길 10(우편번호 04781)<br>
+            <br>
+            <em>매장 운영시간<br></em>
+            10:30 - 19:00<br>
+            화요일 - 일요일(공휴일 운영)<br>
+            <br>
+            <em>전화</em><br>
+            +82 02-6462-6262
+        </p>
+    </section>
+
+    <footer id="footer">
+      <div class="footer_top">
+        <div class="f_top_left">
+          <h1>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="루이스폴센 로고"></a>
+          </h1>
+          <ul>
+            <li><a href="https://www.facebook.com/Louis.Poulsen.Lighting/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/louispoulsen/">Instagram</a></li>
+            <li><a href="https://www.youtube.com/user/LouisPoulsenLighting">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="f_top_right">
+          <a href="util_login.html"><p>LOGIN</p></a>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <nav class="fnb">
+          <ul>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">정책쿠키</a></li>
+            <li><a href="#">정책문의 양식 - GDPR</a></li>
+            <li><a href="#">연례 보고서</a></li>
+          </ul>
+        </nav>
+        <p>© 2022 Artemide S.p.A. &#45; All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

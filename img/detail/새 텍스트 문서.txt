@@ -1,0 +1,217 @@
+ph5
+모노크롬 페일 로즈
+로즈
+그레이
+오렌지
+레드 
+그린
+블루 
+화이트 모던
+화이트 클래식
+브라운
+머스타드
+모노크롬 블루
+모노크롬 화이트
+모노크롬 블랙
+모노크롬 오이스터 그레이
+파스텔 블루 로즈 피치
+파스텔 오이스터 그레이 블루 로즈
+
+Monochrome Failrose
+rose
+gray
+orange
+red
+green
+blue
+whitemodern
+whiteclassic
+brown
+mustard
+monoblue
+monoWhite
+monoblack
+oystergray
+rosepeach
+bluerose
+
+0
+#D3BBC0
+background-color: rgb(211, 187, 192);
+Selected color
+Monochrome pale rose
+Delivery time
+>8 weeks. Contact Customer Service
+Design by
+Poul Henningsen
+
+1
+#BE7F90
+rgb(190, 127, 144)
+Selected color
+Hues of rose
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+2
+#8D7F7F
+Selected color
+Hues of grey
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+3
+#E37E4A
+Shipment
+Hues of orange
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+4
+#DC4F3E
+Shipment
+Hues of red
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+5
+#6F8C5E
+Shipment
+Hues of green
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+6
+#456A85
+Shipment
+Hues of blue
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+7
+#F6F4F1
+Shipment
+White modern
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+8
+#FFFFFFF
+Shipment
+White classic
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+9
+#B48166
+Shipment
+Copper
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+10
+#DACA75
+Shipment
+Brass
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+11
+#2B3BAF
+Shipment
+Monochrome blue
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+12
+#FFFFF1
+Shipment
+Monochrome white
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+13
+#000
+Shipment
+Monochrome black
+Delivery time
+3-6 days
+Shipment
+Ready for shipment
+Design by
+Poul Henningsen
+
+14
+#CEC4C2
+Selected color
+Monochrome oyster grey
+Delivery time
+>8 weeks. Contact Customer Service
+Design by
+Poul Henningsen
+
+15
+#E7CECA
+Selected color
+Pastels blue rose peach
+Delivery time
+>8 weeks. Contact Customer Service
+Design by
+Poul Henningsen
+
+16
+#C6CFD6
+Selected color
+Pastels oyster blue rose
+Delivery time
+>8 weeks. Contact Customer Service
+Design by
+Poul Henningsen
