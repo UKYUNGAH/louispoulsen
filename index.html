@@ -11,163 +11,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollSmoother.min.js"></script>
-        <script>
-            $(function () {
-                var video = document.getElementById('video');
-                var btn = document.getElementById('stop_btn');
-                var btn1 = document.getElementById('play_btn');
-
-                btn.onclick = function () {
-                    video.pause();
-                };
-                btn1.onclick = function () {
-                    video.play();
-                };
-            });
-
-            $(function () {
-                // 모바일 오픈 버튼을 눌렀더니
-                // 모바일 gnb가 나타난다
-                $('.gnb_open_btn').click(function () {
-                    $('.gnb').animate({ right: 0 }, 500);
-                });
-
-                // 모바일 닫기 버튼을 눌렀더니
-                // 모바일 gnb가 사라진다
-                $('.gnb_close_btn').click(function () {
-                    $('.gnb').animate({ right: '-120%' }, 500);
-                });
-
-                // 서브메뉴 보이게 하기!
-                $('.gnb_inner>ul')
-                    .children('li')
-                    .mouseenter(function () {
-                        $(this).children('.sub_menu').stop().slideDown(500);
-                    });
-                $('.gnb_inner>ul>li').mouseleave(function () {
-                    $(this).children('.sub_menu').stop().slideUp(500);
-                });
-
-                $('.new_bottom>.next').click(function () {
-                    $('.new_list>li')
-                        .first()
-                        .animate({ marginLeft: '-11.1111%' }, 500, function () {
-                            $(this).appendTo('.new_list').css('margin-left', 0);
-                        });
-                });
-                $('.new_bottom>.prev').click(function () {
-                    $('.new_list>li')
-                        .last()
-                        .prependTo('.new_list')
-                        .css('margin-left', '-11.1111%')
-                        .animate({ marginLeft: 0 }, 500);
-                });
-            });
-
-            window.onload = function () {
-                // GSAP 애니메이션 초기화
-                gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-                // 애니메이션 스무더 사용
-                const smoother = ScrollSmoother.create({
-                    wrapper: '#body',
-                    content: '#content',
-                    smooth: 1.5,
-                });
-
-                // 섹션에 스크롤 트리거 애니메이션 추가
-                gsap.from('#about h2', {
-                    scrollTrigger: '#about',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                });
-                gsap.from('#about p', {
-                    scrollTrigger: '#about',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    delay: 0.3,
-                });
-                gsap.from('#about a', {
-                    scrollTrigger: '#about',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    delay: 0.6,
-                });
-
-                gsap.from('.designer_top', {
-                    scrollTrigger: '.designer_top',
-                    opacity: 0,
-                    x: -50,
-                    duration: 1,
-                });
-                gsap.from('.designer_bottom', {
-                    scrollTrigger: '.designer_bottom',
-                    opacity: 0,
-                    x: 50,
-                    duration: 1,
-                    delay: 0.3,
-                });
-
-                gsap.from('#best video', {
-                    scrollTrigger: '#best',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                });
-                gsap.from('#best h3', {
-                    scrollTrigger: '#best',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    delay: 0.3,
-                });
-                gsap.from('#best p', {
-                    scrollTrigger: '#best',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    delay: 0.6,
-                });
-                gsap.from('#best a', {
-                    scrollTrigger: '#best',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    delay: 0.9,
-                });
-
-                gsap.from('#new .new_top', {
-                    scrollTrigger: '#new',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                });
-                gsap.from('.new_list>li', {
-                    scrollTrigger: '#new',
-                    opacity: 0,
-                    y: 50,
-                    stagger: 0.1,
-                    duration: 1,
-                });
-
-                gsap.from('#store .store_top_wrap', {
-                    scrollTrigger: '#store',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                });
-                gsap.from('.store_bottom_wrap', {
-                    scrollTrigger: '#store',
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    delay: 0.3,
-                });
-            };
-        </script>
     </head>
     <body>
         <header id="header">
@@ -177,7 +20,7 @@
             <div class="gnb_open_btn">
                 <a href="#"><img src="img/gnb_btn.png" alt="모바일메뉴" /></a>
             </div>
-            <div div class="gnb">
+            <div class="gnb">
                 <div class="gnb_close_btn">
                     <a href="#"><img src="img/ei_close.png" alt="메뉴닫기" /></a>
                 </div>
@@ -452,5 +295,167 @@
                 <p>© 2022 Artemide S.p.A. &#45; All Rights Reserved</p>
             </div>
         </footer>
+
+        <script>
+            $(function () {
+                var video = document.getElementById('video');
+                var btn = document.getElementById('stop_btn');
+                var btn1 = document.getElementById('play_btn');
+
+                btn.onclick = function () {
+                    video.pause();
+                };
+                btn1.onclick = function () {
+                    video.play();
+                };
+            });
+
+            $(function () {
+                // 모바일 오픈 버튼을 눌렀더니
+                // 모바일 gnb가 나타난다
+                $('.gnb_open_btn').click(function () {
+                    $('.gnb').animate({ right: 0 }, 500);
+                });
+
+                // 모바일 닫기 버튼을 눌렀더니
+                // 모바일 gnb가 사라진다
+                $('.gnb_close_btn').click(function () {
+                    $('.gnb').animate({ right: '-120%' }, 500);
+                });
+
+                // 서브메뉴 보이게 하기!
+                $('.gnb_inner>ul')
+                    .children('li')
+                    .mouseenter(function () {
+                        $(this).children('.sub_menu').stop().slideDown(500);
+                    });
+                $('.gnb_inner>ul>li').mouseleave(function () {
+                    $(this).children('.sub_menu').stop().slideUp(500);
+                });
+
+                $('.new_bottom>.next').click(function () {
+                    $('.new_list>li')
+                        .first()
+                        .animate({ marginLeft: '-11.1111%' }, 500, function () {
+                            $(this).appendTo('.new_list').css('margin-left', 0);
+                        });
+                });
+                $('.new_bottom>.prev').click(function () {
+                    $('.new_list>li')
+                        .last()
+                        .prependTo('.new_list')
+                        .css('margin-left', '-11.1111%')
+                        .animate({ marginLeft: 0 }, 500);
+                });
+            });
+
+            window.onload = function () {
+                // GSAP 애니메이션 초기화
+                gsap.registerPlugin(ScrollTrigger);
+
+                // 비디오 제어 버튼 애니메이션
+                // gsap.from('#stop_btn', { opacity: 0, y: -50, duration: 1 });
+                // gsap.from('#play_btn', { opacity: 0, y: -50, duration: 1, delay: 0.5 });
+
+                // 애니메이션 스무더 사용
+                // const smoother = ScrollSmoother.create({
+                //     wrapper: '#body',
+                //     content: '#content',
+                //     smooth: 1.5,
+                // });
+
+                // 섹션에 스크롤 트리거 애니메이션 추가
+                gsap.from('#about h2', {
+                    scrollTrigger: '#about',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                });
+                gsap.from('#about p', {
+                    scrollTrigger: '#about',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    delay: 0.3,
+                });
+                gsap.from('#about a', {
+                    scrollTrigger: '#about',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    delay: 0.6,
+                });
+
+                gsap.from('.designer_top', {
+                    scrollTrigger: '.designer_top',
+                    opacity: 0,
+                    x: -50,
+                    duration: 1,
+                });
+                gsap.from('.designer_bottom', {
+                    scrollTrigger: '.designer_bottom',
+                    opacity: 0,
+                    x: 50,
+                    duration: 1,
+                    delay: 0.3,
+                });
+
+                gsap.from('#best video', {
+                    scrollTrigger: '#best',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                });
+                gsap.from('#best h3', {
+                    scrollTrigger: '#best',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    delay: 0.3,
+                });
+                gsap.from('#best p', {
+                    scrollTrigger: '#best',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    delay: 0.6,
+                });
+                gsap.from('#best a', {
+                    scrollTrigger: '#best',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    delay: 0.9,
+                });
+
+                gsap.from('#new .new_top', {
+                    scrollTrigger: '#new',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                });
+                gsap.from('.new_list>li', {
+                    scrollTrigger: '#new',
+                    opacity: 0,
+                    y: 50,
+                    stagger: 0.1,
+                    duration: 1,
+                });
+
+                gsap.from('#store .store_top_wrap', {
+                    scrollTrigger: '#store',
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.8,
+                });
+                gsap.from('.store_bottom_wrap', {
+                    scrollTrigger: '#store',
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    delay: 1,
+                });
+            };
+        </script>
     </body>
 </html>

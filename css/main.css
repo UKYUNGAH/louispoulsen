@@ -285,7 +285,7 @@
         left: 2.5%;
         top: 50%;
         cursor: pointer;
-        z-index: 99999;
+        z-index: 888;
     }
     #new .new_bottom .next_btn {
         display: block;
@@ -293,7 +293,7 @@
         top: 50%;
         right: 2.5%;
         cursor: pointer;
-        z-index: 99999;
+        z-index: 888;
     }
 
     /* store!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -647,7 +647,7 @@
         left: 0;
         top: 50%;
         cursor: pointer;
-        z-index: 99999;
+        z-index: 888;
     }
     #new .new_bottom .next_btn {
         display: block;
@@ -655,7 +655,7 @@
         top: 50%;
         right: 0;
         cursor: pointer;
-        z-index: 99999;
+        z-index: 888;
     }
 
     /* store */
